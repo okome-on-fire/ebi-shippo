@@ -1,0 +1,90 @@
+@import 'reset';
+@import 'color';
+body {
+    background: $background;
+    font-family: "M PLUS Rounded 1c";
+    font-size: 16px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+a {
+    color: $Secondary;
+}
+
+#page-top {
+    position: fixed;
+    z-index: 900;
+    right: 40px;
+    bottom: 45px;
+    a {
+        font-size: 28px;
+        display: block;
+        background: $Secondary;
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    i {
+        color: #fff;
+        line-height: 50px;
+    }
+}
+
+.c-mainBox {
+    width: 95%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding-bottom: 100px;
+    background: url('../images/head.png') no-repeat bottom right / 50%;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 0 15px 15px;
+    position: relative;
+    border-bottom: 3px solid #000;
+    &::before {
+        position: absolute;
+        bottom: -14px;
+        left: 1em;
+        width: 0;
+        height: 0;
+        content: '';
+        border-width: 14px 12px 0;
+        border-style: solid;
+        border-color: #000 transparent transparent;
+    }
+    &::after {
+        position: absolute;
+        bottom: -10px;
+        left: 1em;
+        width: 0;
+        height: 0;
+        content: '';
+        border-width: 14px 12px 0;
+        border-style: solid;
+        border-color: #fff transparent transparent;
+    }
+}
+
+h2 {
+    font-size: 24px;
+    border-bottom: 3px solid #000;
+    margin-bottom: 15px;
+    &:first-letter {
+        font-size: 150%;
+        color: $button;
+    }
+}
+
+.c-contents {
+    margin-bottom: 40px;
+}

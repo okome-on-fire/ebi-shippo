@@ -89,7 +89,8 @@ li {
 }
 
 body {
-  background: #fffffe;
+  background: -webkit-gradient(linear, left top, left bottom, from(#C6ACC7), color-stop(30%, #F7E2CC), color-stop(70%, #FBD7B7), to(#FDF3B8));
+  background: linear-gradient(to bottom, #C6ACC7, #F7E2CC 30%, #FBD7B7 70%, #FDF3B8);
   font-family: "M PLUS Rounded 1c";
   font-size: 16px;
 }
@@ -122,6 +123,23 @@ a {
   vertical-align: middle;
 }
 
+#page-top a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+  -webkit-transform: translateY(10px) scale(1.05);
+          transform: translateY(10px) scale(1.05);
+  mix-blend-mode: multiply;
+}
+
 #page-top i {
   color: #fff;
   line-height: 50px;
@@ -130,9 +148,11 @@ a {
 .c-mainBox {
   width: 95%;
   max-width: 800px;
-  margin: 30px auto;
-  padding-bottom: 100px;
-  background: url("../images/head.png") no-repeat bottom right/50%;
+  margin: 0 auto;
+  padding: 30px 20px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 h1 {
@@ -180,6 +200,95 @@ h2:first-letter {
 
 .c-contents {
   margin-bottom: 40px;
+}
+
+footer {
+  padding: 60px 0 20px;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 11px;
+  color: #333;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 150px;
+}
+
+/* Animation */
+.parallax > use {
+  -webkit-animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+          animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+}
+
+@-webkit-keyframes move-forever {
+  0% {
+    -webkit-transform: translate3d(-90px, 0, 0);
+            transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(85px, 0, 0);
+            transform: translate3d(85px, 0, 0);
+  }
+}
+
+@keyframes move-forever {
+  0% {
+    -webkit-transform: translate3d(-90px, 0, 0);
+            transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(85px, 0, 0);
+            transform: translate3d(85px, 0, 0);
+  }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
 }
 
 .nav_list {
@@ -341,5 +450,13 @@ h2:first-letter {
 
 .omake_download a:hover {
   background: #fde24f;
+}
+
+.wave-box {
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 /*# sourceMappingURL=top.css.map */
